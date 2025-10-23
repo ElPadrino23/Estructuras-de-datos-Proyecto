@@ -1,3 +1,10 @@
+/*
+Luis Fernando Martinez Barragan - A01613426
+Programacion de estructura de datos y algoritmos fundamentales
+Avance entrega 2
+*/
+
+
 #include "players.h"
 #include <iostream>
 
@@ -50,3 +57,4 @@ int main() {
 
     return 0;
 }
+
