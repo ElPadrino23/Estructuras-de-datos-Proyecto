@@ -1,3 +1,10 @@
+/*
+Luis Fernando Martinez Barragan - A01613426
+Programacion de estructura de datos y algoritmos fundamentales
+Avance entrega 2
+*/
+
+
 #ifndef PLAYERS_H
 #define PLAYERS_H
 
@@ -19,3 +26,4 @@ void agregarJugador(const string& nombreArchivo);
 void mostrarListaOrdenada(const string& nombreArchivo);
 
 #endif
+
