@@ -1,6 +1,5 @@
-#Luis Fernando Martinez Barragan 
-##A01613426
-###Avance de Proyecto
+### Luis Fernando Martinez Barragan - A01613426
+## Avance de Proyecto
 
 El programa es capaz de leer un archivo que incluye nombres de jugadores de NFL, Tambien despliega un menu con varias opciones, donde podemos agragar mas jugadores de manera manual, ver los jugadores que llevamos y una vez terminado generar un archivo aparte con la lista de estos jugadores ordenados de manera ascendente.
 
