@@ -14,7 +14,7 @@ Sin embargo no obtuve ni un solo error utilizando el siguiente compilador online
 **Recomendacion: Utilizar el compilador online "onlinegbd.com" https://www.onlinegdb.com/online_c++_compiler# **
 
 ## SICT0301 – Evalua los componentes
-###1.1. Vector (vector<Player>)
+### 1.1. Vector (vector<Player>)
 
 El vector se utiliza para almacenar temporalmente jugadores leídos desde archivo
 
@@ -27,7 +27,7 @@ Eliminar elementos implica mover datos, por lo que seria O(n).
 La busqueda secuencial tambien O(n).
 
 Se usa  porque QuickSort permite de forma eficiente.
-###1.2. LinkedList (lista ligada simple)
+### 1.2. LinkedList (lista ligada simple)
 
 La lista simplemente ligada ofrece:
 
@@ -41,7 +41,7 @@ Recorrido completo de la lista en O(n).
 
 Esta estructura permite insertar elementos rápidamente sin necesidad de reorganizar datos en memoria.
 
-###1.3. DoublyLinkedList (lista doblemente ligada)
+### 1.3. DoublyLinkedList (lista doblemente ligada)
 
 La versión doblemente ligada permite navegar en ambas direcciones.
 
@@ -55,7 +55,7 @@ Recorrido en O(n).
 
 La mayor flexibilidad facilita operaciones de borrado.
 
-###1.4. Binary Search Tree (BST)
+### 1.4. Binary Search Tree (BST)
 
 El BST está ordenado por puntaje en orden descendente.
 
@@ -75,7 +75,7 @@ Recorrido completo (in-order): O(n).
 
 Su ventaja principal es que permite obtener resultados ordenados automáticamente mediante un recorrido in-order.
 
-##2. Complejidad de QuickSort
+## 2. Complejidad de QuickSort
 
 QuickSort se utiliza para ordenar el vector inicial de jugadores.
 
@@ -87,7 +87,7 @@ Peor caso: O(n²).
 
 Aun así, es uno de los algoritmos más eficientes para vectores en la práctica.
 
-##3. Complejidad total del programa
+## 3. Complejidad total del programa
 
 Las operaciones más relevantes del proyecto requieren:
 
@@ -105,47 +105,47 @@ O(n log n)
 
 Esta complejidad está dominada por QuickSort y por las inserciones múltiples en el árbol binario.
 
-##SICT0302 – Toma de decisiones
+## SICT0302 – Toma de decisiones
 
 Esta sección describe las decisiones que se tomaron durante el desarrollo del proyecto y su justificación.
 
-###1. Uso de archivos para almacenar jugadores
+### 1. Uso de archivos para almacenar jugadores
 
 Se eligió almacenar los datos en un archivo de texto porque permite persistencia entre ejecuciones, facilita pruebas y mantiene el proyecto simple de utilizar.
 
-###2. Uso de vector<Player>
+### 2. Uso de vector<Player>
 
 Se usa vector porque permite acceso por índice en tiempo constante y es una estructura ideal para aplicar QuickSort.
 
-###3. Elección del algoritmo QuickSort
+### 3. Elección del algoritmo QuickSort
 
 QuickSort se seleccionó por su excelente rendimiento promedio y por ser uno de los algoritmos más utilizados académicamente para vectores.
 
-###4. Implementación de LinkedList
+### 4. Implementación de LinkedList
 
 La lista ligada simple se implementó para permitir inserciones rápidas y demostrar su diferencia respecto a otras estructuras dinámicas.
 
-###5. Implementación de DoublyLinkedList
+### 5. Implementación de DoublyLinkedList
 
 La versión doblemente ligada permite eliminar nodos con mayor facilidad y recorrer en ambas direcciones. Se eligió para analizar su eficiencia respecto a la lista simple.
 
-###6. Implementación de Binary Search Tree
+### 6. Implementación de Binary Search Tree
 
 El árbol binario permite almacenar a los jugadores en un orden natural según su puntaje. Su recorrido in-order facilita mostrar la lista ordenada sin necesidad de reordenar manualmente.
 
-###7. Uso de recorridos in-order
+### 7. Uso de recorridos in-order
 
 Este recorrido permite obtener jugadores ordenados por puntaje de manera eficiente.
 
-###8. Búsqueda por nombre
+### 8. Búsqueda por nombre
 
 Aunque el árbol ordena por puntaje, la búsqueda se realiza por nombre mediante recorrido completo. Se eligió este diseño porque el nombre no forma parte de la clave de ordenamiento.
 
-###9. Diseño modular por archivos
+### 9. Diseño modular por archivos
 
 El proyecto se dividió en varios archivos (players.h, advanced_structures.h, etc.) para mejorar legibilidad, organización y mantenibilidad.
 
-###10. Comparación entre estructuras
+### 10. Comparación entre estructuras
 
 Se eligieron diferentes estructuras para observar sus diferencias en cuanto a:
 
@@ -153,37 +153,37 @@ Inserción,Búsqueda,Eliminación,Recorrido y Facilidad de implementación
 
 Esto cumple con los objetivos de aprendizaje del curso.
 
-##SICT0303 – Solución del problema
+## SICT0303 – Solución del problema
 
 A continuación se detalla cómo las estructuras y algoritmos permiten resolver el problema planteado.
 
-###1. Lectura de jugadores desde archivo
+### 1. Lectura de jugadores desde archivo
 
 El archivo se lee línea por línea, y los datos se almacenan en un vector para manipularlos fácilmente.
 
-###2. Ordenamiento conforme a puntaje
+### 2. Ordenamiento conforme a puntaje
 
 El vector de jugadores es ordenado con QuickSort para preparar la estructura inicial del BST.
 
-###3. Construcción del Binary Search Tree
+### 3. Construcción del Binary Search Tree
 
 Una vez ordenados los jugadores, éstos se insertan en el BST para organizar la información de manera jerárquica y eficiente.
 
-###4. Gestión mediante LinkedList y DoublyLinkedList
+### 4. Gestión mediante LinkedList y DoublyLinkedList
 
 Estas dos estructuras permiten agregar, buscar y eliminar jugadores de forma dinámica sin depender del orden del archivo original.
 
-###5. Mostrar y guardar la información
+### 5. Mostrar y guardar la información
 
 El BST puede recorrer los jugadores ordenados por puntaje mediante un recorrido in-order, lo que permite listar los datos en orden descendente.
 Las listas ligadas también pueden guardarse en archivo para dejar persistencia.
 
-###6. Búsqueda y eliminación
+### 6. Búsqueda y eliminación
 
 Las listas usan búsqueda lineal para localizar jugadores por nombre.
 El BST usa una búsqueda recursiva general porque el nombre no es la clave del árbol.
 
-###7. Capacidad de escalar
+### 7. Capacidad de escalar
 
 La estructura del proyecto permite agregar mejoras futuras como:
 
