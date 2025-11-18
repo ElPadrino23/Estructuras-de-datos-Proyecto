@@ -9,9 +9,9 @@ en caso de que el codigo lance algun error se puede solucionar ejecutando el sig
 
 g++ main.cpp players.h players.cpp advanced_structures.cpp advanced_structures.h
 
-sin embargo no obtuve ni un solo error usando el compilador online
+### sin embargo no obtuve ni un solo error usando el compilador online
 
-**recomendacion usar el compilador online "onlinegbd.com" https://www.onlinegdb.com/online_c++_compiler# **
+## **recomendacion usar el compilador online "onlinegbd.com" https://www.onlinegdb.com/online_c++_compiler# **
 
 ## SICT0301 – evalua los componentes
 ### 1.1 vector (vector<Player>)
