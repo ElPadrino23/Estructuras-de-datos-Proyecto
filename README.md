@@ -1,205 +1,144 @@
-### Luis Fernando Martinez Barragan - A01613426
-## Avance de Proyecto - Entrega 3
+luis fernando martinez barragan - A01613426
+avance de proyecto - entrega 3
 
-El programa es capaz de leer un archivo que incluye nombres de jugadores de NFL junto con su puntaje, Tambien despliega un menu con 7 opciones, donde podremos:
-Cambiar la estructura de datos (LinkedList, DoublyLinkedList, BinarySearchTree),  agregar jugadores, mostrar la lista , ordenarlos de manera descendente, buscar algun jugador, eliminarlo , guardar los datos y salir (Esta ultima opcion crea un archivo con la nueva lista de jugadores)
+el programa es capaz de leer un archivo que incluye nombres de jugadores de nfl junto con su puntaje, tambien despliega un menu con 7 opciones donde podremos cambiar la estructura de datos (linkedlist doublylinkedlist binarysearchtree), agregar jugadores, mostrar la lista, ordenarlos de manera descendente, buscar algun jugador, eliminarlo, guardar los datos y salir (esta ultima opcion crea un archivo con la nueva lista de jugadores)
 
-Para usar el programa debemos de tener abrir el proyecto junto con el archivo "jugadores.txt". Aqui deben de estar ordenados los jugadores con sus 2 nombre y la puntuacion de estos (1-50) separados por un "-". 
+para usar el programa debemos tener abierto el proyecto junto con el archivo "jugadores.txt" aqui deben estar ordenados los jugadores con sus 2 nombres y la puntuacion de estos (1-50) separados por un "-"
 
-En caso de que el codigo lance algun error, se puede solucionar ejecutando el siguiente codigo:
+en caso de que el codigo lance algun error se puede solucionar ejecutando el siguiente comando
 g++ main.cpp players.h players.cpp advanced_structures.cpp advanced_structures.h
 
-Sin embargo no obtuve ni un solo error utilizando el siguiente compilador online:
+sin embargo no obtuve ni un solo error usando el compilador online
 
-**Recomendacion: Utilizar el compilador online "onlinegbd.com" https://www.onlinegdb.com/online_c++_compiler# **
+**recomendacion usar el compilador online "onlinegbd.com" https://www.onlinegdb.com/online_c++_compiler#
+ **
 
-## SICT0301 – Evalua los componentes
-### 1.1. Vector (vector<Player>)
+SICT0301 – evalua los componentes
+1.1 vector (vector<Player>)
 
-El vector se utiliza para almacenar temporalmente jugadores leídos desde archivo
+el vector se utiliza para almacenar temporalmente jugadores leidos desde archivo
+el acceso por indice es O(1)
+insertar al final es O(1)
+eliminar elementos es O(n) porque mueve datos
+la busqueda secuencial es O(n)
+se usa porque quicksort funciona muy bien con el
 
-El acceso por indice tiene complejidad O(1).
+1.2 linkedlist (lista ligada simple)
 
-Insertar elementos al final tiene complejidad O(1) 
+insertar al inicio O(1)
+eliminar por nombre O(n)
+busqueda O(n)
+recorrido O(n)
+sirve para insertar rapido sin reorganizar memoria
 
-Eliminar elementos implica mover datos, por lo que seria O(n).
+1.3 doublylinkedlist (lista doblemente ligada)
 
-La busqueda secuencial tambien O(n).
+permite moverse en ambas direcciones
+insercion O(1)
+eliminacion O(n) pero mas facil por acceso a prev
+busqueda O(n)
+recorrido O(n)
+mas flexible para borrar nodos
 
-Se usa  porque QuickSort permite de forma eficiente.
-### 1.2. LinkedList (lista ligada simple)
+1.4 binary search tree (bst)
 
-La lista simplemente ligada ofrece:
+ordenado por puntaje
+insercion promedio O(log n) peor caso O(n)
+busqueda promedio O(log n) peor caso O(n)
+eliminacion O(log n) a O(n)
+recorrido in-order O(n)
+ventaja obtener orden automatico
 
-Inserción al inicio en tiempo O(1).
+2 complejidad de quicksort
 
-Eliminación por nombre en O(n), debido a la búsqueda.
+mejor caso O(n log n)
+promedio O(n log n)
+peor caso O(n^2)
+aun asi es muy eficiente en la practica
 
-Búsqueda lineal en O(n).
+3 complejidad total del programa
 
-Recorrido completo de la lista en O(n).
+leer archivo O(n)
+insertar en bst O(n log n)
+ordenar vector O(n log n)
+mostrar o guardar O(n)
 
-Esta estructura permite insertar elementos rápidamente sin necesidad de reorganizar datos en memoria.
-
-### 1.3. DoublyLinkedList (lista doblemente ligada)
-
-La versión doblemente ligada permite navegar en ambas direcciones.
-
-Inserción al inicio o al final en tiempo O(1).
-
-Eliminación por nombre en O(n), pero es más sencilla debido al acceso a nodos previos.
-
-Búsqueda en O(n).
-
-Recorrido en O(n).
-
-La mayor flexibilidad facilita operaciones de borrado.
-
-### 1.4. Binary Search Tree (BST)
-
-El BST está ordenado por puntaje en orden descendente.
-
-Inserción promedio: O(log n).
-
-Inserción en peor caso: O(n).
-
-Búsqueda promedio: O(log n).
-
-Búsqueda peor caso: O(n).
-
-Eliminación promedio: O(log n).
-
-Eliminación peor caso: O(n).
-
-Recorrido completo (in-order): O(n).
-
-Su ventaja principal es que permite obtener resultados ordenados automáticamente mediante un recorrido in-order.
-
-## 2. Complejidad de QuickSort
-
-QuickSort se utiliza para ordenar el vector inicial de jugadores.
-
-Mejor caso: O(n log n).
-
-Caso promedio: O(n log n).
-
-Peor caso: O(n²).
-
-Aun así, es uno de los algoritmos más eficientes para vectores en la práctica.
-
-## 3. Complejidad total del programa
-
-Las operaciones más relevantes del proyecto requieren:
-
-Leer jugadores desde archivo: O(n).
-
-Insertar jugadores en BST: O(n log n).
-
-Ordenar con QuickSort: O(n log n).
-
-Mostrar o guardar datos: O(n).
-
-Por ello, la complejidad total del sistema completo es aproximadamente:
-
+complejidad total aproximada
 O(n log n)
+dominada por quicksort y el bst
 
-Esta complejidad está dominada por QuickSort y por las inserciones múltiples en el árbol binario.
+SICT0302 – toma de decisiones
+1 uso de archivos para almacenar jugadores
 
-## SICT0302 – Toma de decisiones
+se usa archivo de texto porque permite persistencia y facilita pruebas
 
-Esta sección describe las decisiones que se tomaron durante el desarrollo del proyecto y su justificación.
+2 uso de vector<Player>
 
-### 1. Uso de archivos para almacenar jugadores
+permite acceso por indice y es ideal para quicksort
 
-Se eligió almacenar los datos en un archivo de texto porque permite persistencia entre ejecuciones, facilita pruebas y mantiene el proyecto simple de utilizar.
+3 eleccion de quicksort
 
-### 2. Uso de vector<Player>
+se eligio por su buen rendimiento promedio
 
-Se usa vector porque permite acceso por índice en tiempo constante y es una estructura ideal para aplicar QuickSort.
+4 implementacion de linkedlist
 
-### 3. Elección del algoritmo QuickSort
+sirve para inserciones rapidas y comparar estructuras
 
-QuickSort se seleccionó por su excelente rendimiento promedio y por ser uno de los algoritmos más utilizados académicamente para vectores.
+5 implementacion de doublylinkedlist
 
-### 4. Implementación de LinkedList
+mas facil borrar nodos y navegar
 
-La lista ligada simple se implementó para permitir inserciones rápidas y demostrar su diferencia respecto a otras estructuras dinámicas.
+6 implementacion de binary search tree
 
-### 5. Implementación de DoublyLinkedList
+ordena jugadores por puntaje y facilita mostrarlos ordenados
 
-La versión doblemente ligada permite eliminar nodos con mayor facilidad y recorrer en ambas direcciones. Se eligió para analizar su eficiencia respecto a la lista simple.
+7 uso de recorrido in-order
 
-### 6. Implementación de Binary Search Tree
+permite obtener los jugadores ordenados sin esfuerzo extra
 
-El árbol binario permite almacenar a los jugadores en un orden natural según su puntaje. Su recorrido in-order facilita mostrar la lista ordenada sin necesidad de reordenar manualmente.
+8 busqueda por nombre
 
-### 7. Uso de recorridos in-order
+se hace recorrido porque el bst esta ordenado por puntaje
 
-Este recorrido permite obtener jugadores ordenados por puntaje de manera eficiente.
+9 diseño modular por archivos
 
-### 8. Búsqueda por nombre
+mejora la legibilidad y organizacion
 
-Aunque el árbol ordena por puntaje, la búsqueda se realiza por nombre mediante recorrido completo. Se eligió este diseño porque el nombre no forma parte de la clave de ordenamiento.
+10 comparacion entre estructuras
 
-### 9. Diseño modular por archivos
+se comparan insercion busqueda eliminacion recorrido y facilidad
 
-El proyecto se dividió en varios archivos (players.h, advanced_structures.h, etc.) para mejorar legibilidad, organización y mantenibilidad.
+SICT0303 – solucion del problema
+1 lectura de jugadores desde archivo
 
-### 10. Comparación entre estructuras
+se lee cada linea y se guarda en un vector
 
-Se eligieron diferentes estructuras para observar sus diferencias en cuanto a:
+2 ordenamiento conforme a puntaje
 
-Inserción,Búsqueda,Eliminación,Recorrido y Facilidad de implementación
+quicksort ordena el vector para preparar el bst
 
-Esto cumple con los objetivos de aprendizaje del curso.
+3 construccion del bst
 
-## SICT0303 – Solución del problema
+se insertan los jugadores ya ordenados
 
-A continuación se detalla cómo las estructuras y algoritmos permiten resolver el problema planteado.
+4 gestion con linkedlist y doublylinkedlist
 
-### 1. Lectura de jugadores desde archivo
+permiten agregar buscar y eliminar de forma dinamica
 
-El archivo se lee línea por línea, y los datos se almacenan en un vector para manipularlos fácilmente.
+5 mostrar y guardar informacion
 
-### 2. Ordenamiento conforme a puntaje
+el bst entrega jugadores ordenados con in-order
+las listas tambien pueden guardarse en archivo
 
-El vector de jugadores es ordenado con QuickSort para preparar la estructura inicial del BST.
+6 busqueda y eliminacion
 
-### 3. Construcción del Binary Search Tree
+las listas usan busqueda lineal
+el bst usa busqueda general por que el nombre no es la clave
 
-Una vez ordenados los jugadores, éstos se insertan en el BST para organizar la información de manera jerárquica y eficiente.
+7 capacidad de escalar
 
-### 4. Gestión mediante LinkedList y DoublyLinkedList
+se puede ampliar con avl hash multiples archivos o visualizacion
 
-Estas dos estructuras permiten agregar, buscar y eliminar jugadores de forma dinámica sin depender del orden del archivo original.
+conclusion
 
-### 5. Mostrar y guardar la información
-
-El BST puede recorrer los jugadores ordenados por puntaje mediante un recorrido in-order, lo que permite listar los datos en orden descendente.
-Las listas ligadas también pueden guardarse en archivo para dejar persistencia.
-
-### 6. Búsqueda y eliminación
-
-Las listas usan búsqueda lineal para localizar jugadores por nombre.
-El BST usa una búsqueda recursiva general porque el nombre no es la clave del árbol.
-
-### 7. Capacidad de escalar
-
-La estructura del proyecto permite agregar mejoras futuras como:
-
-Árboles AVL
-
-Tablas hash para búsquedas muy rápidas por nombre
-
-Soporte para múltiples archivos
-
-Representación visual de las estructuras
-
-Conclusión
-
-El proyecto implementa correctamente varias estructuras de datos avanzadas, cada una con un propósito claro y justificado. La combinación de vectores, listas, listas doblemente ligadas, árboles binarios y QuickSort permite comprender y comparar distintas técnicas de almacenamiento, recorrido y ordenamiento.
-
-Gracias a este diseño modular y flexible, el sistema es eficiente, escalable y cumple completamente con los criterios establecidos en las rúbricas del curso.
-
-
-
+el proyecto implementa varias estructuras avanzadas con propositos claros la combinacion de vector listas listas dobles bst y quicksort permite comparar tecnicas de almacenamiento y ordenamiento el sistema es eficiente escalable y cumple con lo requerido en las rubricas del curso
