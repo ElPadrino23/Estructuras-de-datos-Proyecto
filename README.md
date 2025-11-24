@@ -10,7 +10,7 @@ En el primer avance el proyecto utilizaba unicamente un vector para almacenar lo
 
 En el segundo avance se anadio un archivo README con la documentacion basica del proyecto y se implemento un menu de cuatro opciones. Ademas, el programa ya permitia ordenar la lista de jugadores por puntaje y guardar los datos procesados en un nuevo archivo de salida. Con estas mejoras, el sistema comenzo a ofrecer funcionalidad mas completa y dejo de depender unicamente del almacenamiento temporal en memoria.
 
-## Cambios sobre el primer avance
+#### Cambios sobre el primer avance
 
 Se agrego el README
 Razon: era necesario documentar el proyecto para que se pudiera revisar el proposito, funcionamiento y alcance del programa.
@@ -24,11 +24,11 @@ Razon: ordenar la informacion permitio preparar los datos para otras operaciones
 Se habilito guardar los datos en un nuevo archivo
 Razon: se necesito agregar persistencia para conservar los cambios realizados sobre la lista de jugadores y evitar depender solo de la memoria durante la ejecucion.
 
-Descripcion del avance 3
+## Descripcion del avance 3
 
 En el tercer avance se integraron tres estructuras de datos avanzadas: linkedlist, doublylinkedlist y binarysearchtree. El menu se amplio de cuatro a siete opciones, lo que permitio agregar, buscar, eliminar jugadores y cambiar la estructura utilizada durante la ejecucion del programa. Tambien se mantuvo la capacidad de guardar los datos actualizados en un archivo, asegurando persistencia despues de cada modificacion. Con este avance, el proyecto dejo de depender de una sola estructura lineal y comenzo a ofrecer mecanismos mas completos para la gestion dinamica de la informacion.
 
-Cambios sobre el segundo avance
+### Cambios sobre el segundo avance
 
 Se integraron estructuras de datos avanzadas (linkedlist, doublylinkedlist y binarysearchtree)
 Razon: fue necesario ampliar el proyecto para cumplir con los requerimientos del curso
@@ -42,11 +42,11 @@ Razon: estas funciones permitieron gestionar la informacion de forma dinamica y 
 Se implemento el cambio de estructura durante la ejecucion
 Razon: esto permitio analizar el comportamiento de cada estructura con los mismos datos y fortalecer la argumentacion en competencias.
 
-Entrega final
+## Entrega final
 
 La entrega final del proyecto incluye un programa funcional llamado Player Manager el cual es capaz de leer un archivo con jugadores y sus puntajes, almacenarlos en diferentes estructuras de datos (vector, linkedlist, doublylinkedlist y binarysearchtree) y permitir su gestion mediante un menu con siete opciones, ademas el sistema puede agregar nuevos jugadores, buscarlos, eliminarlos, cambiar la estructura utilizada durante la ejecucion, ordenarlos cuando es necesario y guardar los datos actualizados en un archivo de salida. Todo el codigo compila correctamente, cuenta con identificacion del autor y se encuentra documentado. El proyecto demuestra el uso de estructuras lineales y no lineales, asi como mecanismos de lectura y escritura de archivos y operaciones de consulta sobre los datos.
 
-Cambios sobre el tercer avance
+### Cambios sobre el tercer avance
 
 Se completo el analisis de complejidad de todas las estructuras y operaciones
 Razon: era necesario para cumplir con las especificaciones y justificar decisiones con fundamentos tecnicos.
