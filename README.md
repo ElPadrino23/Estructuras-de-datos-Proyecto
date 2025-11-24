@@ -1,144 +1,87 @@
-## Luis Fernando Martinez Barragan - A01613426
-## Avance de proyecto - entrega 3
+## Player Manager
+### Luis Fernando Martinez Barragan - A01613426
+El proyecto Player Manager permite administrar jugadores de la NFL junto con su puntaje, utilizando diferentes estructuras de datos. El sistema lee informacion desde un archivo, mostrarla, modificarla y almacenarla nuevamente, ofreciendo comparacion entre estructuras lineales y no lineales.
 
-El programa es capaz de leer un archivo que incluye nombres de jugadores de nfl junto con su puntaje, tambien despliega un menu con 7 opciones donde podremos cambiar la estructura de datos (linkedlist doublylinkedlist binarysearchtree), agregar jugadores, mostrar la lista, ordenarlos de manera descendente, buscar algun jugador, eliminarlo, guardar los datos y salir (esta ultima opcion crea un archivo con la nueva lista de jugadores)
+### Descripcion del avance 1
 
-para usar el programa debemos tener abierto el proyecto junto con el archivo "jugadores.txt" aqui deben estar ordenados los jugadores con sus 2 nombres y la puntuacion de estos (1-50) separados por un "-"
+En el primer avance el proyecto utilizaba unicamente un vector para almacenar los jugadores y aun no contaba con un archivo README. Las funciones estaban limitadas y no existia documentacion sobre el funcionamiento del programa.
 
-en caso de que el codigo lance algun error se puede solucionar ejecutando el siguiente comando: 
+### Descripcion del avance 2
 
-g++ main.cpp players.h players.cpp advanced_structures.cpp advanced_structures.h
+En el segundo avance se anadio un archivo README con la documentacion basica del proyecto y se implemento un menu de cuatro opciones. Ademas, el programa ya permitia ordenar la lista de jugadores por puntaje y guardar los datos procesados en un nuevo archivo de salida. Con estas mejoras, el sistema comenzo a ofrecer funcionalidad mas completa y dejo de depender unicamente del almacenamiento temporal en memoria.
 
-### sin embargo no obtuve ni un solo error usando el compilador online
+## Cambios sobre el primer avance
 
-## **recomendacion usar el compilador online "onlinegbd.com" https://www.onlinegdb.com/online_c++_compiler# **
+Se agrego el README
+Razon: era necesario documentar el proyecto para que se pudiera revisar el proposito, funcionamiento y alcance del programa.
 
-## SICT0301 – evalua los componentes
-### 1.1 vector (vector<Player>)
+Se implemento el menu con 4 opciones
+Razon: se busco mejorar la interaccion del usuario y organizar las funciones principales del programa de manera mas clara.
 
-el vector se utiliza para almacenar temporalmente jugadores leidos desde archivo
-el acceso por indice es O(1)
-insertar al final es O(1)
-eliminar elementos es O(n) porque mueve datos
-la busqueda secuencial es O(n)
-se usa porque quicksort funciona muy bien con el
+Se anadio la opcion de ordenar jugadores
+Razon: ordenar la informacion permitio preparar los datos para otras operaciones y cumplir con los requerimientos del curso relacionados con algoritmos de ordenamiento.
 
-### 1.2 linkedlist (lista ligada simple)
+Se habilito guardar los datos en un nuevo archivo
+Razon: se necesito agregar persistencia para conservar los cambios realizados sobre la lista de jugadores y evitar depender solo de la memoria durante la ejecucion.
 
-insertar al inicio O(1)
-eliminar por nombre O(n)
-busqueda O(n)
-recorrido O(n)
-sirve para insertar rapido sin reorganizar memoria
+Descripcion del avance 3
 
-### 1.3 doublylinkedlist (lista doblemente ligada)
+En el tercer avance se integraron tres estructuras de datos avanzadas: linkedlist, doublylinkedlist y binarysearchtree. El menu se amplio de cuatro a siete opciones, lo que permitio agregar, buscar, eliminar jugadores y cambiar la estructura utilizada durante la ejecucion del programa. Tambien se mantuvo la capacidad de guardar los datos actualizados en un archivo, asegurando persistencia despues de cada modificacion. Con este avance, el proyecto dejo de depender de una sola estructura lineal y comenzo a ofrecer mecanismos mas completos para la gestion dinamica de la informacion.
 
-permite moverse en ambas direcciones
-insercion O(1)
-eliminacion O(n) pero mas facil por acceso a prev
-busqueda O(n)
-recorrido O(n)
-mas flexible para borrar nodos
+Cambios sobre el segundo avance
 
-### 1.4 binary search tree (bst)
+Se integraron estructuras de datos avanzadas (linkedlist, doublylinkedlist y binarysearchtree)
+Razon: fue necesario ampliar el proyecto para cumplir con los requerimientos del curso
 
-ordenado por puntaje
-insercion promedio O(log n) peor caso O(n)
-busqueda promedio O(log n) peor caso O(n)
-eliminacion O(log n) a O(n)
-recorrido in-order O(n)
-ventaja obtener orden automatico
+El menu se amplio de 4 a 7 opciones
+Razon: se buscaba ofrecer un mayor control sobre los datos y permitir nuevas operaciones que no estaban disponibles en el avance anterior.
 
-### 2 complejidad de quicksort
+Se anadio la opcion de agregar, buscar y eliminar jugadores
+Razon: estas funciones permitieron gestionar la informacion de forma dinamica y demostrar el uso real de las estructuras avanzadas
 
-mejor caso O(n log n)
-promedio O(n log n)
-peor caso O(n^2)
-aun asi es muy eficiente en la practica
+Se implemento el cambio de estructura durante la ejecucion
+Razon: esto permitio analizar el comportamiento de cada estructura con los mismos datos y fortalecer la argumentacion en competencias.
 
-### 3 complejidad total del programa
+Entrega final
 
-leer archivo O(n)
-insertar en bst O(n log n)
-ordenar vector O(n log n)
-mostrar o guardar O(n)
+La entrega final del proyecto incluye un programa funcional llamado Player Manager el cual es capaz de leer un archivo con jugadores y sus puntajes, almacenarlos en diferentes estructuras de datos (vector, linkedlist, doublylinkedlist y binarysearchtree) y permitir su gestion mediante un menu con siete opciones, ademas el sistema puede agregar nuevos jugadores, buscarlos, eliminarlos, cambiar la estructura utilizada durante la ejecucion, ordenarlos cuando es necesario y guardar los datos actualizados en un archivo de salida. Todo el codigo compila correctamente, cuenta con identificacion del autor y se encuentra documentado. El proyecto demuestra el uso de estructuras lineales y no lineales, asi como mecanismos de lectura y escritura de archivos y operaciones de consulta sobre los datos.
 
-complejidad total aproximada
-O(n log n)
-dominada por quicksort y el bst
+Cambios sobre el tercer avance
 
-## SICT0302 – toma de decisiones
-### 1 uso de archivos para almacenar jugadores
+Se completo el analisis de complejidad de todas las estructuras y operaciones
+Razon: era necesario para cumplir con las especificaciones y justificar decisiones con fundamentos tecnicos.
 
-se usa archivo de texto porque permite persistencia y facilita pruebas
+Actualice el REadMe con la plantilla oficial
+Razon: el avance anterior no permitia evaluar las competencias solicitadas por falta de formato adecuado.
 
-### 2 uso de vector<Player>
+Se organizaron las explicaciones para el video y documentacion final
+Razon: con el fin de presentar de manera clara los fundamentos teoricos del proyecto.
 
-permite acceso por indice y es ideal para quicksort
+## Instrucciones para compilar el proyecto
 
-### 3 eleccion de quicksort
+Ejecutar en la terminal:
 
-se eligio por su buen rendimiento promedio
+g++ main.cpp players.h players.cpp advanced_structures.h advanced_structures.cpp
 
-### 4 implementacion de linkedlist
+## Descripcion de las entradas del proyecto
 
-sirve para inserciones rapidas y comparar estructuras
+El programa requiere un archivo llamado jugadores.txt con el siguiente formato:
 
-### 5 implementacion de doublylinkedlist
+Nombre Apellido-Puntaje
 
-mas facil borrar nodos y navegar
 
-### 6 implementacion de binary search tree
+Ejemplo:
 
-ordena jugadores por puntaje y facilita mostrarlos ordenados
+Patrick Mahomes-50
+Josh Allen-45
+Joe Burrow-42
 
-### 7 uso de recorrido in-order
+Descripcion de las salidas del proyecto
 
-permite obtener los jugadores ordenados sin esfuerzo extra
+El programa muestra en pantalla la informacion de los jugadores segun la estructura seleccionada y genera un archivo actualizado cuando el usuario lo solicita (Opcion 7). Esta lista incluye: 
 
-### 8 busqueda por nombre
+lista de jugadores
 
-se hace recorrido porque el bst esta ordenado por puntaje
+jugadores ordenados
 
-### 9 diseño modular por archivos
-
-mejora la legibilidad y organizacion
-
-### 10 comparacion entre estructuras
-
-se comparan insercion busqueda eliminacion recorrido y facilidad
-
-## SICT0303 – solucion del problema
-### 1 lectura de jugadores desde archivo
-
-se lee cada linea y se guarda en un vector
-
-### 2 ordenamiento conforme a puntaje
-
-quicksort ordena el vector para preparar el bst
-
-### 3 construccion del bst
-
-se insertan los jugadores ya ordenados
-
-### 4 gestion con linkedlist y doublylinkedlist
-
-permiten agregar buscar y eliminar de forma dinamica
-
-### 5 mostrar y guardar informacion
-
-el bst entrega jugadores ordenados con in-order
-las listas tambien pueden guardarse en archivo
-
-### 6 busqueda y eliminacion
-
-las listas usan busqueda lineal
-el bst usa busqueda general por que el nombre no es la clave
-
-### 7 capacidad de escalar
-
-se puede ampliar con avl hash multiples archivos o visualizacion
-
-### Concluision
-
-El proyecto implementa varias estructuras avanzadas con propositos bastante claros la combinacion de vector,listas, listas dobles, bst y quicksort permite comparar tecnicas de almacenamiento y ordenamiento el sistema es eficiente escalable y cumple con lo requerido en las rubricas del curso
+archivo nuevo con los cambios realizados
