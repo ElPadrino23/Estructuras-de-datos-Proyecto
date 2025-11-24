@@ -85,3 +85,117 @@ lista de jugadores
 jugadores ordenados
 
 archivo nuevo con los cambios realizados
+
+
+# Desarrollo de competencias
+## SICT0301: Evalua los componentes
+Se realiza un analisis de complejidad correcto y completo para los algoritmos de ordenamiento usados en el programa
+
+En este proyecto se utiliza el algoritmo quicksort para ordenar la lista de jugadores por puntaje antes de construir el binarysearchtree. El analisis de complejidad ahora es completo porque incluye los tres casos:
+
+mejor caso: O(n log n) cuando los pivotes dividen la lista de manera equilibrada
+
+caso promedio: O(n log n) que es el comportamiento esperado en la practica
+
+peor caso: O(n^2) cuando los datos estan casi ordenados o el pivote no divide de forma uniforme
+
+Este analisis se refleja en el README y en la seccion donde se describe la preparacion de los datos antes de insertarlos en el arbolkk
+
+Hace un analisis de complejidad correcto y completo de todas las estructuras de datos y cada uno de sus usos en el programa
+
+El proyecto utiliza cuatro estructuras:
+
+vector
+
+acceso por indice: O(1)
+
+insercion al final: O(1)
+
+eliminacion: O(n)
+
+busqueda secuencial: O(n)
+
+linkedlist
+
+insercion al inicio: O(1)
+
+eliminacion por nombre: O(n)
+
+recorrido: O(n)
+
+doublylinkedlist
+
+insercion: O(1)
+
+eliminacion: O(n) pero con acceso mas eficiente al nodo previo
+
+recorrido en ambas direcciones: O(n)
+
+binarysearchtree
+
+insercion: promedio O(log n), peor caso O(n)
+
+busqueda: promedio O(log n), peor caso O(n)
+
+eliminacion: O(log n) a O(n)
+
+recorrido in order: O(n)
+
+El analisis ahora es completo porque incluye mejor caso, caso promedio y peor caso, ademas de explicar como cada estructura se usa dentro del programa.
+
+Hace un analisis de complejidad correcto y completo para todos los demas componentes del programa y determina la complejidad final del programa
+
+Otros procesos del programa:
+
+lectura de archivo: O(n)
+
+guardado de archivo: O(n)
+
+cambio de estructura: O(n) debido a la reconstruccion de datos
+
+busquedas en listas: O(n)
+
+busqueda en bst: O(log n) promedio
+
+La complejidad final del programa es:
+
+O(n log n)
+dominada por quicksort y la construccion del bst.
+
+Esta conclusion se basa en la suma de operaciones y se encuentra explicada en el README final.
+
+## SICT0302: Toma decisiones
+Selecciona un algoritmo de ordenamiento adecuado al problema y lo usa correctamente
+
+Escogi quicksort porque tiene buen rendimiento  y permite ordenar rapidamente antes de insertar en el arbol.Tome la decision basandome en su complejidad O(n log n) en la mayoria de los casos y en que no ocupa memoria adicional. La implementacion se observa cuando el vector es ordenado antes de construir el bst.
+
+Selecciona una estructura de datos adecuada al problema y la usa correctamente
+
+El programa permite escoger entre diferentes estructuras dependiendo de la necesidad:
+
+vector para lectura inicial y ordenamiento eficiente
+
+linkedlist para inserciones simples sin reorganizacion de memoria
+
+doublylinkedlist para busquedas en ambas direcciones y eliminaciones
+
+binarysearchtree para ordenar jugadores mediante recorrido in order
+
+La seleccion esta justificada por los analisis de complejidad y las operaciones que se realizan en cada estructura.
+
+## SICT0303: Implementa acciones cientificas
+Implementa mecanismos para consultar informacion de las estructuras correctos
+
+El usuario puede buscar jugadores por nombre usando:
+
+recorrido lineal en linkedlist y doublylinkedlist
+
+Permitiendo asi comparar estrategias de consulta y muestran el uso correcto de estructuras lineales y no lineales.
+
+Implementa mecanismos de lectura de archivos para cargar datos a las estructuras de manera correcta
+
+El programa lee el archivo jugadores.txt linea por linea, valida el formato y almacena los datos en memoria antes de construir la estructura seleccionada. Esto asegura que los datos iniciales se carguen correctamente y sin errores.
+
+Implementa mecanismos de escritura de archivos para guardar los datos de las estructuras de manera correcta
+
+El sistema permite guardar la informacion actualizada en un nuevo archivo de salida. El guardado se realiza recorriendo la estructura activa y escribiendo cada jugador en el formato adecuado. Esto garantiza persistencia y evita la perdida de datos despues de la ejecucion.
