@@ -198,4 +198,4 @@ El programa lee el archivo jugadores.txt linea por linea, valida el formato y al
 
 Implementa mecanismos de escritura de archivos para guardar los datos de las estructuras de manera correcta
 
-El sistema permite guardar la informacion actualizada en un nuevo archivo de salida. El guardado se realiza recorriendo la estructura activa y escribiendo cada jugador en el formato adecuado. Esto garantiza persistencia y evita la perdida de datos despues de la ejecucion.
+El sistema permite guardar la informacion actualizada en un nuevo archivo de salida. El guardado se realiza recorriendo la estructura activa y escribiendo cada jugador en el formato adecuado, garantizando asi la correcta utilizacion de los datos, asi como la nula perdida de los mismos
