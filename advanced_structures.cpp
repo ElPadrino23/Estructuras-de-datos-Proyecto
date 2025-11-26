@@ -72,9 +72,7 @@ void LinkedList::saveToFile(const string& filename) {
     cout << "Datos guardados en " << filename << endl;
 }
 
-// ============================================
-// DoublyLinkedList implementations
-// ============================================
+// DLL   
 DoublyLinkedList::~DoublyLinkedList() {
     Node* current = head;
     while (current) {
@@ -151,9 +149,7 @@ void DoublyLinkedList::saveToFile(const string& filename) {
     cout << "Datos guardados en " << filename << endl;
 }
 
-// ============================================
-// Binary Search Tree implementations
-// ============================================
+// implementacion de BST
 void BinarySearchTree::insert(Player p) {
     insertRecursive(root, p);
 }
@@ -163,7 +159,7 @@ void BinarySearchTree::insertRecursive(TreeNode*& node, Player p) {
         node = new TreeNode(p);
         return;
     }
-    if (p.puntaje > node->data.puntaje) {  // Orden descendente
+    if (p.puntaje > node->data.puntaje) {  
         insertRecursive(node->left, p);
     } else {
         insertRecursive(node->right, p);
@@ -178,7 +174,7 @@ Player* BinarySearchTree::search(string nombre) {
 TreeNode* BinarySearchTree::searchRecursive(TreeNode* node, string nombre) {
     if (!node || node->data.nombre == nombre) return node;
     
-    // Buscar en ambos subárboles (ya que no está ordenado por nombre, solo por puntaje)
+
     TreeNode* left = searchRecursive(node->left, nombre);
     if (left) return left;
     return searchRecursive(node->right, nombre);
@@ -197,7 +193,7 @@ void BinarySearchTree::inOrderTraversal(TreeNode* node, ostream& output, int& po
     if (node) {
         inOrderTraversal(node->left, output, posicion);
         
-        // Si es cout, agregar numeración
+       
         if (&output == &cout) {
             output << posicion << ". ";
             posicion++;
@@ -210,7 +206,7 @@ void BinarySearchTree::inOrderTraversal(TreeNode* node, ostream& output, int& po
 
 void BinarySearchTree::saveToFile(const string& filename) {
     ofstream file(filename);
-    int posicion = 1;  // No se usa para archivo, pero es necesario para la firma
+    int posicion = 1;  
     inOrderTraversal(root, file, posicion);
     file.close();
     cout << "Datos guardados en " << filename << endl;
