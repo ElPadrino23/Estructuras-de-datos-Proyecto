@@ -22,6 +22,7 @@ vector<Player> jugadoresVector;
 LinkedList* listaLigada = nullptr;
 DoublyLinkedList* listaDoble = nullptr;
 BinarySearchTree* bst = nullptr;
+LinkedList* listaFavoritos = nullptr;
 
 // cargar datos en la estructura act  
 void cargarDatos(const string& archivo) {
@@ -59,7 +60,9 @@ int main() {
         cout << "4. Buscar jugador" << endl;
         cout << "5. Eliminar jugador" << endl;
         cout << "6. Guardar datos" << endl;
-        cout << "7. Salir" << endl;
+        cout << "7. Agregar a favoritos" << endl;
+        cout << "8. Mostrar favoritos" << endl;
+        cout << "9. Salir" << endl;
         cout << "========================================" << endl;
         
         // Mostrar estructura actual
@@ -70,7 +73,7 @@ int main() {
         else if (estructuraActual == BST) cout << "Binary Search Tree";
         cout << endl;
         
-        cout << "Selecciona una opcion: ";
+        cout << "Selecciona una opcioon: ";
         cin >> opcion;
         
         switch (opcion) {
@@ -94,9 +97,9 @@ int main() {
                     if (bst) { delete bst; bst = nullptr; }
                     
                     cargarDatos(archivoEntrada);
-                    cout << "Estructura cambiada exitosamente." << endl;
+                    cout << "Estructura cambiada " << endl;
                 } else {
-                    cout << "Opcion invalida." << endl;
+                    cout << "Opcion invalida" << endl;
                 }
                 break;
             }
@@ -133,7 +136,7 @@ int main() {
                     bst->insert(p);
                 }
                 
-                cout << "\nJugador agregado exitosamente!" << endl;
+                cout << "\nJugador agregado " << endl;
                 break;
             }
             
@@ -168,7 +171,7 @@ int main() {
                     } else {
                         cout << "\nOrdenando jugadores..." << endl;
                         quickSort(jugadoresVector, 0, jugadoresVector.size() - 1);
-                        cout << "Jugadores ordenados exitosamente!" << endl;
+                        cout << "Jugadores ordenados " << endl;
                     }
                 } else {
                     cout << "\nordena con el vector" << endl;
@@ -234,9 +237,9 @@ int main() {
                 }
                 
                 if (eliminado) {
-                    cout << "Jugador eliminado exitosamente!" << endl;
+                    cout << "Jugador eliminado " << endl;
                 } else {
-                    cout << "Jugador no encontrado." << endl;
+                    cout << "Jugador no encontrado" << endl;
                 }
                 break;
             }
@@ -254,24 +257,77 @@ int main() {
                     if (bst) bst->saveToFile(archivoSalida);
                 }
                 
-                cout << "Datos guardados exitosamente!" << endl;
+                cout << "Datos guardados " << endl;
                 break;
             }
             
-            case 7:
-                cout << "\nGracias por usar el programa!" << endl;
+            case 7: {
+                string nombre;
+                cout << "\nNombre del jugador a agregar a favoritos: ";
+                cin.ignore();
+                getline(cin, nombre);
+                
+                Player* encontrado = nullptr;
+                
+                if (estructuraActual == VECTOR) {
+                    for (auto& p : jugadoresVector) {
+                        if (p.nombre == nombre) {
+                            encontrado = &p;
+                            break;
+                        }
+                    }
+                } else if (estructuraActual == LINKEDLIST) {
+                    if (listaLigada) encontrado = listaLigada->search(nombre);
+                } else if (estructuraActual == DOUBLYLINKEDLIST) {
+                    if (listaDoble) encontrado = listaDoble->search(nombre);
+                } else if (estructuraActual == BST) {
+                    if (bst) encontrado = bst->search(nombre);
+                }
+                
+                if (encontrado) {
+                    if (!listaFavoritos) listaFavoritos = new LinkedList();
+                    Player favPlayer = {encontrado->nombre, encontrado->puntaje};
+                    listaFavoritos->insert(favPlayer);
+                    cout << "Jugador agregado a favoritos: " << encontrado->nombre 
+                         << " - " << encontrado->puntaje << endl;
+                } else {
+                    cout << "Jugador no encontrado." << endl;
+                }
                 break;
+            }
+            
+            case 8: {
+                cout << "\nLista de Favoritos" << endl;
+                if (listaFavoritos) {
+                    listaFavoritos->display();
+                } else {
+                    cout << "No hay jugadores favoritos" << endl;
+                }
+                break;
+            }
+            
+            case 9: {
+                if (listaFavoritos) {
+                    listaFavoritos->saveToFile("Jugadores_favoritos.txt");
+                    cout << "\nLista de favoritos guardada en Jugadores_favoritos.txt" << endl;
+                } else {
+                    cout << "\nNo hay jugadores favoritos para guardar." << endl;
+                }
+                cout << "Gracias por usar. pongame 10 profeee :)" << endl;
+                break;
+            }
                 
             default:
-                cout << "\nOpcion invalida. Por favor selecciona una opcion del 0 al 7." << endl;
+                cout << "\n Selecciona entre el 0 y 9" << endl;
         }
         
-    } while (opcion != 7);
+    } while (opcion != 9);
     
     // Liberar memoria
     delete listaLigada;
     delete listaDoble;
     delete bst;
+    delete listaFavoritos;
     
     return 0;
 }
