@@ -20,29 +20,29 @@ fecha de inicio: 13/11/2025
 
 using namespace std;
 
-// Nodo
+// nodo
 struct Node {
     Player data;
     Node* next;
-    Node* prev;  // Solo para DoublyLinkedList
+    Node* prev;  // Solo para DLL
     Node(Player p) : data(p), next(nullptr), prev(nullptr) {}
 };
 
-// LinkedList 
+// LL 
 class LinkedList {
 private:
     Node* head;
 public:
     LinkedList() : head(nullptr) {}
     ~LinkedList();
-    void insert(Player p);  // O(1) al inicio
-    bool remove(string nombre);  // O(n) búsqueda
-    Player* search(string nombre);  // O(n)
-    void display();  // O(n)
-    void saveToFile(const string& filename);  // O(n)
+    void insert(Player p);  
+    bool remove(string nombre);  
+    Player* search(string nombre);  
+    void display();  
+    void saveToFile(const string& filename);  
 };
 
-// DoublyLinkedList
+// DLL
 class DoublyLinkedList {
 private:
     Node* head;
@@ -50,14 +50,14 @@ private:
 public:
     DoublyLinkedList() : head(nullptr), tail(nullptr) {}
     ~DoublyLinkedList();
-    void insert(Player p);  // O(1) al inicio/fin
-    bool remove(string nombre);  // O(n)
-    Player* search(string nombre);  // O(n)
-    void display();  // O(n)
-    void saveToFile(const string& filename);  // O(n)
+    void insert(Player p);  
+    bool remove(string nombre);  
+    Player* search(string nombre);  
+    void display();  
+    void saveToFile(const string& filename);  
 };
 
-// Nodo BST
+// BST
 struct TreeNode {
     Player data;
     TreeNode* left;
@@ -65,7 +65,7 @@ struct TreeNode {
     TreeNode(Player p) : data(p), left(nullptr), right(nullptr) {}
 };
 
-// Binary Search Tree arribaabajo
+
 class BinarySearchTree {
 private:
     TreeNode* root;
@@ -78,11 +78,11 @@ private:
 public:
     BinarySearchTree() : root(nullptr) {}
     ~BinarySearchTree() { destroy(root); }
-    void insert(Player p);  // O(log n)
-    bool remove(string nombre);  // O(log n) promedio
-    Player* search(string nombre);  // O(log n)
-    void display();  // O(n) in-order
-    void saveToFile(const string& filename);  // O(n) in-order
+    void insert(Player p);  
+    bool remove(string nombre);  
+    Player* search(string nombre);  
+    void display();  /
+    void saveToFile(const string& filename);  
 };
 
 #endif
