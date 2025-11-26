@@ -69,7 +69,6 @@ El programa requiere un archivo llamado jugadores.txt con el siguiente formato:
 
 Nombre Apellido-Puntaje
 
-
 Ejemplo:
 
 Patrick Mahomes-50
@@ -85,7 +84,6 @@ lista de jugadores
 jugadores ordenados
 
 archivo nuevo con los cambios realizados
-
 
 # Desarrollo de competencias
 ## SICT0301: Evalua los componentes
@@ -107,39 +105,123 @@ El proyecto utiliza cuatro estructuras:
 
 vector
 
-acceso por indice: O(1)
+acceso por indice:
 
-insercion al final: O(1)
+mejor caso: O(1)
 
-eliminacion: O(n)
+caso promedio: O(1)
 
-busqueda secuencial: O(n)
+peor caso: O(1)
+
+insercion al final:
+
+mejor caso: O(1)
+
+caso promedio: O(1)
+
+peor caso: O(n) cuando hay que redimensionar
+
+eliminacion:
+
+mejor caso: O(1) si se elimina el ultimo
+
+caso promedio: O(n)
+
+peor caso: O(n)
+
+busqueda secuencial:
+
+mejor caso: O(1)
+
+caso promedio: O(n)
+
+peor caso: O(n)
 
 linkedlist
 
-insercion al inicio: O(1)
+insercion al inicio:
 
-eliminacion por nombre: O(n)
+mejor caso: O(1)
 
-recorrido: O(n)
+caso promedio: O(1)
+
+peor caso: O(1)
+
+eliminacion por nombre:
+
+mejor caso: O(1) si esta en el primer nodo
+
+caso promedio: O(n)
+
+peor caso: O(n)
+
+recorrido:
+
+mejor caso: O(1) si se requiere solo el primer elemento
+
+caso promedio: O(n)
+
+peor caso: O(n)
 
 doublylinkedlist
 
-insercion: O(1)
+insercion:
 
-eliminacion: O(n) pero con acceso mas eficiente al nodo previo
+mejor caso: O(1)
 
-recorrido en ambas direcciones: O(n)
+caso promedio: O(1)
+
+peor caso: O(1)
+
+eliminacion:
+
+mejor caso: O(1) si ya se tiene referencia al nodo
+
+caso promedio: O(n)
+
+peor caso: O(n)
+
+recorrido en ambas direcciones:
+
+mejor caso: O(1)
+
+caso promedio: O(n)
+
+peor caso: O(n)
 
 binarysearchtree
 
-insercion: promedio O(log n), peor caso O(n)
+insercion:
 
-busqueda: promedio O(log n), peor caso O(n)
+mejor caso: O(log n) en arbol balanceado
 
-eliminacion: O(log n) a O(n)
+caso promedio: O(log n)
 
-recorrido in order: O(n)
+peor caso: O(n) en arbol degenerado
+
+busqueda:
+
+mejor caso: O(1) si está en la raiz
+
+caso promedio: O(log n)
+
+peor caso: O(n)
+
+eliminacion:
+
+mejor caso: O(log n)
+
+caso promedio: O(log n)
+
+peor caso: O(n)
+
+recorrido in order:
+
+mejor caso: O(n)
+
+caso promedio: O(n)
+
+peor caso: O(n)
 
 El analisis ahora es completo porque incluye mejor caso, caso promedio y peor caso, ademas de explicar como cada estructura se usa dentro del programa.
 
@@ -198,4 +280,24 @@ El programa lee el archivo jugadores.txt linea por linea, valida el formato y al
 
 Implementa mecanismos de escritura de archivos para guardar los datos de las estructuras de manera correcta
 
-El sistema permite guardar la informacion actualizada en un nuevo archivo de salida. El guardado se realiza recorriendo la estructura activa y escribiendo cada jugador en el formato adecuado, garantizando asi la correcta utilizacion de los datos, asi como la nula perdida de los mismos
+El sistema permite guardar la informacion actualizada en un nuevo archivo de salida. El guardado se realiza recorriendo la estructura activa y escribiendo cada jugador en el formato adecuado, garantizando asi la correcta utilizacion de los datos, asi como la nula perdida de los mismos.
+
+
+## AGREGADO IMPORTANTE: AVANCE FINAL Y NUEVAS FUNCIONES
+
+### Se amplio el menu a 10 opciones
+Originalmente eran 7 opciones, pero ahora incluye:
+
+- Guardar datos 
+- mostrar favoritos  
+- agregar favoritos  
+ 
+
+Esto cumple con la instruccion del profesor de NO usar vector y utilizar una estructura no lineal para favoritos.
+
+### Se implemento la lista de favoritos usando una doubly linked list
+Razon: permite recorrer en ambas direcciones, eliminar nodos de forma eficiente y NO depende de indices como un vector, cumpliendo lo solicitado en asesoria.
+
+### Se actualizaron las descripciones para incluir esta nueva funcionalidad
+Se explica que ahora el usuario puede manejar una lista paralela de jugadores favoritos sin alterar la estructura principal.
+
