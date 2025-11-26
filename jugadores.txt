@@ -1,49 +1,25 @@
-Patrick Mahomes - 50
-
-Tom Brady - 49
-
-Aaron Donald - 48
-
-Travis Kelce - 47
-
-Christian McCaffrey - 46
-
-Tyreek Hill - 45
-
-Micah Parsons - 44
-
-Joe Burrow - 43
-
-Justin Jefferson - 42
-
-T.J. Watt - 41
-
 Josh Allen - 40
-
-Jalen Hurts - 39
-
-Nick Bosa - 38
-
 Davante Adams - 37
-
-Myles Garrett - 36
-
-Stefon Diggs - 35
-
-Lamar Jackson - 34
-
-Aidan Hutchinson - 33
-
-George Kittle - 32
-
-CeeDee Lamb - 31
-
-Derrick Henry - 30
-
-Saquon Barkley - 29
-
 Brock Purdy - 28
-
+T.J. Watt - 41
 Justin Herbert - 27
-
+Micah Parsons - 44
+Aidan Hutchinson - 33
+Christian McCaffrey - 46
+Stefon Diggs - 35
+CeeDee Lamb - 31
+Nick Bosa - 38
+Justin Jefferson - 42
 DeAndre Hopkins - 26
+Jalen Hurts - 39
+Myles Garrett - 36
+Derrick Henry - 30
+Tyreek Hill - 45
+Saquon Barkley - 29
+Joe Burrow - 43
+Patrick Mahomes - 50
+George Kittle - 32
+Lamar Jackson - 34
+Travis Kelce - 47
+Tom Brady - 49
+Aaron Donald - 48
