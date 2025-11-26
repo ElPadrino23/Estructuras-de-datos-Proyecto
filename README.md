@@ -1,6 +1,6 @@
 ## Player Manager
 ### Luis Fernando Martinez Barragan - A01613426
-El proyecto Player Manager permite administrar jugadores de la NFL junto con su puntaje, utilizando diferentes estructuras de datos. El sistema lee informacion desde un archivo, mostrarla, modificarla y almacenarla nuevamente, ofreciendo comparacion entre estructuras lineales y no lineales.
+El proyecto Player Manager permite administrar jugadores de la NFL junto con su puntaje, utilizando diferentes estructuras de datos. El sistema lee informacion desde un archivo y permite mostrarla, modificarla, ordenarla, agregar, guardar y almacenar jugadores favoritos, entre otras opciones, ofreciendo comparacion entre estructuras lineales y no lineales.
 
 ### Descripcion del avance 1
 
@@ -22,11 +22,11 @@ Se anadio la opcion de ordenar jugadores
 Razon: ordenar la informacion permitio preparar los datos para otras operaciones y cumplir con los requerimientos del curso relacionados con algoritmos de ordenamiento.
 
 Se habilito guardar los datos en un nuevo archivo
-Razon: se necesito agregar persistencia para conservar los cambios realizados sobre la lista de jugadores y evitar depender solo de la memoria durante la ejecucion.
+Razon: se necesito agregar para conservar los cambios realizados sobre la lista de jugadores y evitar depender solo de la memoria durante la ejecucion.
 
 ## Descripcion del avance 3
 
-En el tercer avance se integraron tres estructuras de datos avanzadas: linkedlist, doublylinkedlist y binarysearchtree. El menu se amplio de cuatro a siete opciones, lo que permitio agregar, buscar, eliminar jugadores y cambiar la estructura utilizada durante la ejecucion del programa. Tambien se mantuvo la capacidad de guardar los datos actualizados en un archivo, asegurando persistencia despues de cada modificacion. Con este avance, el proyecto dejo de depender de una sola estructura lineal y comenzo a ofrecer mecanismos mas completos para la gestion dinamica de la informacion.
+En el tercer avance se integraron tres estructuras de datos avanzadas: linkedlist, doublylinkedlist y binarysearchtree. El menu se amplio de cuatro a siete opciones, lo que permitio agregar, buscar, eliminar jugadores y cambiar la estructura utilizada durante la ejecucion del programa. Tambien se mantuvo la capacidad de guardar los datos actualizados en un archivo, asegurando persistencia despues de cada modificacion. Con este avance, el proyecto dejo de depender de una sola estructura lineal y comenzo a ofrecer procedimientos mas completos para la gestion de informacion.
 
 ### Cambios sobre el segundo avance
 
@@ -67,7 +67,7 @@ g++ main.cpp players.h players.cpp advanced_structures.h advanced_structures.cpp
 
 El programa requiere un archivo llamado jugadores.txt con el siguiente formato:
 
-Nombre Apellido-Puntaje
+Nombre Apellido - Puntaje
 
 Ejemplo:
 
@@ -86,7 +86,9 @@ jugadores ordenados
 archivo nuevo con los cambios realizados
 
 # Desarrollo de competencias
+
 ## SICT0301: Evalua los componentes
+
 Se realiza un analisis de complejidad correcto y completo para los algoritmos de ordenamiento usados en el programa
 
 En este proyecto se utiliza el algoritmo quicksort para ordenar la lista de jugadores por puntaje antes de construir el binarysearchtree. El analisis de complejidad ahora es completo porque incluye los tres casos:
@@ -97,15 +99,13 @@ caso promedio: O(n log n) que es el comportamiento esperado en la practica
 
 peor caso: O(n^2) cuando los datos estan casi ordenados o el pivote no divide de forma uniforme
 
-Este analisis se refleja en el README y en la seccion donde se describe la preparacion de los datos antes de insertarlos en el arbolkk
-
-Hace un analisis de complejidad correcto y completo de todas las estructuras de datos y cada uno de sus usos en el programa
+Se hace un analisis de complejidad correcto y completo de todas las estructuras de datos y cada uno de sus usos en el programa
 
 El proyecto utiliza cuatro estructuras:
 
-vector
+### vector
 
-acceso por indice:
+#### acceso por indice:
 
 mejor caso: O(1)
 
@@ -113,7 +113,7 @@ caso promedio: O(1)
 
 peor caso: O(1)
 
-insercion al final:
+#### insercion al final:
 
 mejor caso: O(1)
 
@@ -121,7 +121,7 @@ caso promedio: O(1)
 
 peor caso: O(n) cuando hay que redimensionar
 
-eliminacion:
+#### eliminacion:
 
 mejor caso: O(1) si se elimina el ultimo
 
@@ -129,7 +129,7 @@ caso promedio: O(n)
 
 peor caso: O(n)
 
-busqueda secuencial:
+#### busqueda secuencial:
 
 mejor caso: O(1)
 
@@ -137,9 +137,9 @@ caso promedio: O(n)
 
 peor caso: O(n)
 
-linkedlist
+### linkedlist
 
-insercion al inicio:
+#### insercion al inicio:
 
 mejor caso: O(1)
 
@@ -147,7 +147,7 @@ caso promedio: O(1)
 
 peor caso: O(1)
 
-eliminacion por nombre:
+#### eliminacion por nombre:
 
 mejor caso: O(1) si esta en el primer nodo
 
@@ -155,7 +155,7 @@ caso promedio: O(n)
 
 peor caso: O(n)
 
-recorrido:
+#### recorrido:
 
 mejor caso: O(1) si se requiere solo el primer elemento
 
@@ -163,9 +163,9 @@ caso promedio: O(n)
 
 peor caso: O(n)
 
-doublylinkedlist
+### doublylinkedlist
 
-insercion:
+#### insercion:
 
 mejor caso: O(1)
 
@@ -173,7 +173,7 @@ caso promedio: O(1)
 
 peor caso: O(1)
 
-eliminacion:
+#### eliminacion:
 
 mejor caso: O(1) si ya se tiene referencia al nodo
 
@@ -181,7 +181,7 @@ caso promedio: O(n)
 
 peor caso: O(n)
 
-recorrido en ambas direcciones:
+#### recorrido en ambas direcciones:
 
 mejor caso: O(1)
 
@@ -189,9 +189,9 @@ caso promedio: O(n)
 
 peor caso: O(n)
 
-binarysearchtree
+### binarysearchtree
 
-insercion:
+#### insercion:
 
 mejor caso: O(log n) en arbol balanceado
 
@@ -199,7 +199,7 @@ caso promedio: O(log n)
 
 peor caso: O(n) en arbol degenerado
 
-busqueda:
+#### busqueda:
 
 mejor caso: O(1) si está en la raiz
 
@@ -207,7 +207,7 @@ caso promedio: O(log n)
 
 peor caso: O(n)
 
-eliminacion:
+#### eliminacion:
 
 mejor caso: O(log n)
 
@@ -215,7 +215,7 @@ caso promedio: O(log n)
 
 peor caso: O(n)
 
-recorrido in order:
+#### recorrido in order:
 
 mejor caso: O(n)
 
@@ -223,7 +223,7 @@ caso promedio: O(n)
 
 peor caso: O(n)
 
-El analisis ahora es completo porque incluye mejor caso, caso promedio y peor caso, ademas de explicar como cada estructura se usa dentro del programa.
+El analisis ahora es completo ademas de explicar como cada estructura se usa dentro del programa.
 
 Hace un analisis de complejidad correcto y completo para todos los demas componentes del programa y determina la complejidad final del programa
 
@@ -244,12 +244,14 @@ La complejidad final del programa es:
 O(n log n)
 dominada por quicksort y la construccion del bst.
 
-Esta conclusion se basa en la suma de operaciones y se encuentra explicada en el README final.
+Esta conclusion se basa en la suma de operaciones y se encuentra explicada al final.
 
 ## SICT0302: Toma decisiones
 Selecciona un algoritmo de ordenamiento adecuado al problema y lo usa correctamente
 
-Escogi quicksort porque tiene buen rendimiento  y permite ordenar rapidamente antes de insertar en el arbol.Tome la decision basandome en su complejidad O(n log n) en la mayoria de los casos y en que no ocupa memoria adicional. La implementacion se observa cuando el vector es ordenado antes de construir el bst.
+Yo escogi quicksort principalmente por 2 razones, principalmente porque ofrece una excelente relacion entre rendimiento y uso de memoria. Ademas que funciona con complejidad O(n log n) en el mejor caso y en el caso promedio, y además no requiere memoria adicional significativa al trabajar directamente sobre el mismo arreglo.
+
+También lo elegí porque es un algoritmo muy eficiente en la práctica gracias a su buen uso de la caché, lo que lo hace más rápido que otros métodos con complejidad similar.
 
 Selecciona una estructura de datos adecuada al problema y la usa correctamente
 
@@ -263,7 +265,7 @@ doublylinkedlist para busquedas en ambas direcciones y eliminaciones
 
 binarysearchtree para ordenar jugadores mediante recorrido in order
 
-La seleccion esta justificada por los analisis de complejidad y las operaciones que se realizan en cada estructura.
+La seleccion esta justificada por los analisis de complejidad y las operaciones que se realizaran en cada una de las estructuras 
 
 ## SICT0303: Implementa acciones cientificas
 Implementa mecanismos para consultar informacion de las estructuras correctos
@@ -272,18 +274,33 @@ El usuario puede buscar jugadores por nombre usando:
 
 recorrido lineal en linkedlist y doublylinkedlist
 
-Permitiendo asi comparar estrategias de consulta y muestran el uso correcto de estructuras lineales y no lineales.
+Permitiendo asi comparar estrategias de consulta y mostrando el uso correcto de estructuras lineales y no lineales.
+
+Además, se implementó una nueva función para manejar jugadores favoritos, la cual utiliza una doubly linked list independiente para almacenar y gestionar la lista de favoritos, sin utilizar vectores (Esto tambien es un requisito)
+El usuario puede:
+
+agregar jugadores a la lista de favoritos
+
+eliminarlos
+
+mostrarlos mediante recorrido doble
+
+mantener esta lista separada del resto de jugadores
+
+Esta funcionalidad demuestra el dominio del uso dinámico de listas doblemente ligadas y la correcta implementación de operaciones de inserción, eliminación y recorrido.
 
 Implementa mecanismos de lectura de archivos para cargar datos a las estructuras de manera correcta
 
-El programa lee el archivo jugadores.txt linea por linea, valida el formato y almacena los datos en memoria antes de construir la estructura seleccionada. Esto asegura que los datos iniciales se carguen correctamente y sin errores.
+El programa lee el archivo jugadores.txt linea por linea, valida el formato y almacena los datos en memoria antes de construir la estructura seleccionada.
+Esto asegura que los datos iniciales se carguen correctamente y sin errores.
 
 Implementa mecanismos de escritura de archivos para guardar los datos de las estructuras de manera correcta
 
-El sistema permite guardar la informacion actualizada en un nuevo archivo de salida. El guardado se realiza recorriendo la estructura activa y escribiendo cada jugador en el formato adecuado, garantizando asi la correcta utilizacion de los datos, asi como la nula perdida de los mismos.
+El sistema permite guardar la informacion actualizada en un nuevo archivo de salida.
+El guardado se realiza recorriendo la estructura activa y escribiendo cada jugador en el formato adecuado, garantizando asi la correcta utilizacion de los datos, asi como la nula perdida de los mismos.
 
 
-## AGREGADO IMPORTANTE: AVANCE FINAL Y NUEVAS FUNCIONES
+## AGREGADO IMPORTANTE: Avence final (4ta entrega) 
 
 ### Se amplio el menu a 10 opciones
 Originalmente eran 7 opciones, pero ahora incluye:
