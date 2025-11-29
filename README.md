@@ -149,7 +149,7 @@ peor caso: O(1)
 
 #### eliminacion por nombre:
 
-mejor caso: O(1) si esta en el primer nodo
+mejor caso: O(1) 
 
 caso promedio: O(n)
 
@@ -164,7 +164,6 @@ caso promedio: O(n)
 peor caso: O(n)
 
 ### doublylinkedlist
-
 #### insercion:
 
 mejor caso: O(1)
@@ -223,10 +222,6 @@ caso promedio: O(n)
 
 peor caso: O(n)
 
-El analisis ahora es completo ademas de explicar como cada estructura se usa dentro del programa.
-
-Hace un analisis de complejidad correcto y completo para todos los demas componentes del programa y determina la complejidad final del programa
-
 Otros procesos del programa:
 
 lectura de archivo: O(n)
@@ -249,9 +244,9 @@ Esta conclusion se basa en la suma de operaciones y se encuentra explicada al fi
 ## SICT0302: Toma decisiones
 Selecciona un algoritmo de ordenamiento adecuado al problema y lo usa correctamente
 
-Yo escogi quicksort principalmente por 2 razones, principalmente porque ofrece una excelente relacion entre rendimiento y uso de memoria. Ademas que funciona con complejidad O(n log n) en el mejor caso y en el caso promedio, y además no requiere memoria adicional significativa al trabajar directamente sobre el mismo arreglo.
+Utilice Quicksort porque tiene una complejidad O(n log n) en el mejor y en el caso promedio, lo cual es adecuado para ordenar listas de tamaño medio y grande. Ademas que trabaja directamente sobre el mismo arreglo al dividirlo en partes, y esto me ayuda a que mi programa sea mas eficiente
 
-También lo elegí porque es un algoritmo muy eficiente en la práctica gracias a su buen uso de la caché, lo que lo hace más rápido que otros métodos con complejidad similar.
+Ademas, de que Quicksort ofrece una complejidad O(n log n) en el mejor caso y en el caso promedio, lo cual resulta mas eficiente que metodos un poco mas simples como Bubble Sort o Insertion Sort, que trabajan en O(n²) y se vuelven muy lentos cuando la lista crece. A diferencia de Merge Sort, que también es O(n log n) pero necesita memoria extra para arreglos auxiliares, Quicksort trabaja directamente sobre el mismo arreglo y utilizando esta combinación de rapidez y bajo uso de memoria fue lo que me convencio en utilizarlo para este problema. 
 
 Selecciona una estructura de datos adecuada al problema y la usa correctamente
 
